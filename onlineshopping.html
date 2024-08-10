@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boogle Online Shopping Services</title>
+<!--  <link rel="stylesheet" href="./Css/onlineshopping.css" />-->
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+      
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.heading{
+  text-align: center;
+  margin-top: 20px;
+}
+.container {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container .images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.images .card-list {
+  margin: 12px;
+}
+
+.images .image-box {
+  position: relative;
+  height: 250px; 
+  width: 200px; 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.images .image-box img {
+  height: 75%;
+  width: 100%; 
+  max-height: 100%; 
+  border-radius: 6px;
+  transition: transform 0.2s linear;
+}
+
+.image-box:hover img {
+  transform: scale(1.05);
+}
+
+.image-box h6 {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  /* margin-top: 100px; */
+  color: #0a0909;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+  </style>
+</head>
+<body>
+  <h2 class="heading">Most Preferred Shopping Apps</h2>
+  <div class="container">
+   
+
+    <div class="images">
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <h5>Cosmetics</h5>
+          <img src="./images/cosmetics1.jpg" alt="LAKME">
+          <h6>Nykaa</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <h5>Clothing</h5>
+          <img src="images/clothing.jpg" alt="LAKME">
+          <h6>Myntra</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <h5>Electronic Devices</h5>
+          <img src="images/electronic devices.jpg" alt="LAKME">
+          <h6>Amazon</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <h5>Bad Product Quality</h5>
+          <img src="images/Meesho's AI and Data Science Revolution_ A Milestone in Combating Counterfeit Listings and Ensuri___.jpeg" alt="LAKME">
+          <h6>Least preferred app</h6>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <script> const search = document.querySelector(".search-box input");
+const images = document.querySelectorAll(".image-box");
+
+search.addEventListener("keyup", e => {
+    const searchValue = search.value.toLowerCase();
+
+    images.forEach(image => {
+        const imageName = image.dataset.name.toLowerCase();
+        const displayStyle = imageName.includes(searchValue) ? "block" : "none";
+        image.style.display = displayStyle;
+    });
+});
+
+
+search.addEventListener("change", e =>{
+    // if(e.key == "Enter"){
+        let searchValue = search.value.toLowerCase();
+        images.forEach(image =>{
+            const imageName = image.dataset.name.toLowerCase();
+            if(searchValue === imageName){ 
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
+    
+});
+
+search.addEventListener("keyup", () =>{
+    if(search.value != "") return;
+
+    images.forEach(image =>{
+        image.style.display = "block";
+    })
+});</script>
+</body>
+</html>

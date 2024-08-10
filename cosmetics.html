@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boogle Cosmetics Services</title>
+  <link rel="stylesheet" href="./Css/cosmetics.css" />
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+      
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container .search-box {
+  position: relative;
+  height: 50px;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.search-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #323334;
+  padding: 0 15px 0 45px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.search-box i {
+  position: absolute;
+  z-index: 2;
+  color: #999;
+  top: 50%;
+  left: 15px;
+  font-size: 22px;
+  transform: translateY(-50%);
+}
+
+.container .images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.images .card-list {
+  margin: 12px;
+}
+
+.images .image-box {
+  position: relative;
+  height: 250px; 
+  width: 200px; 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.images .image-box img {
+  height: auto;
+  width: 100%; 
+  max-height: 100%; 
+  border-radius: 6px;
+  transition: transform 0.2s linear;
+}
+
+.image-box:hover img {
+  transform: scale(1.05);
+}
+
+.image-box h6 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #0d0c0c;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search an item" list="l1"/>
+      <datalist id="l1">
+        <option value="Kajal">Kajal</option>
+        <option value="Lipstick">Lipstick</option>
+        <option value="Eyeliner">Eyeliner</option>
+        <option value="Foundation">Foundation</option>
+        <option value="Nailpaint">Nailpaint</option>
+        <option value="Eyeshadow Palette">Eyeshadow Palette</option> 
+      </datalist>
+    </div>
+
+    <div class="images">
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Kajal</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Lipstick</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Eyeliner</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Foundation</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Nailpaint">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Nailpaint</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeshadow Palette">
+          <img src="images/IMG-20240304-WA0056.jpg" alt="LAKME">
+          <h6>Eyeshadow Palette</h6>
+        </div>
+      </div>
+
+
+
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Kajal</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Lipstick</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Eyeliner</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Foundation</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Nailpaint">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Nailpaint</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeshadow Palette">
+          <img src="images/IMG-20240304-WA0066.jpg" alt="LOREAL">
+          <h6>Eyeshadow Palette</h6>
+        </div>
+      </div>
+
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Kajal</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Eyeliner</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Lipstick</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Foundation</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Nailpaint">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Nailpaint</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeshadow Palette">
+          <img src="images/IMG-20240304-WA0065.jpg" alt="MAYBELLINE">
+          <h6>Eyeshadow Palette</h6>
+        </div>
+      </div>
+
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Kajal</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Eyeliner</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Lipstick</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Foundation</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Nailpaint">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Nailpaint</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeshadow Palette">
+          <img src="images/IMG-20240304-WA0079.jpg" alt="SUGAR">
+          <h6>Eyeshadow Palette</h6>
+        </div>
+      </div>
+
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Kajal">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Kajal</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeliner">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Eyeliner</h6>
+        </div>
+      </div><div class="card-list">
+        <div class="card-item image-box" data-name="Lipstick">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Lipstick</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Foundation">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Foundation</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Nailpaint">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Nailpaint</h6>
+        </div>
+      </div>
+      <div class="card-list">
+        <div class="card-item image-box" data-name="Eyeshadow Palette">
+          <img src="images/download.jpeg" alt="SWISS BEAUTY">
+          <h6>Eyeshadow Palette</h6>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+    <script>
+      const search = document.querySelector(".search-box input");
+const images = document.querySelectorAll(".image-box");
+
+search.addEventListener("keyup", e => {
+    const searchValue = search.value.toLowerCase();
+
+    images.forEach(image => {
+        const imageName = image.dataset.name.toLowerCase();
+        const displayStyle = imageName.includes(searchValue) ? "block" : "none";
+        image.style.display = displayStyle;
+    });
+});
+
+
+search.addEventListener("change", e =>{
+    // if(e.key == "Enter"){
+        let searchValue = search.value.toLowerCase();
+        images.forEach(image =>{
+            const imageName = image.dataset.name.toLowerCase();
+            if(searchValue === imageName){ 
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
+    
+});
+
+search.addEventListener("keyup", () =>{
+    if(search.value != "") return;
+
+    images.forEach(image =>{
+        image.style.display = "block";
+    })
+});
+    </script>
+</body>
+</html>

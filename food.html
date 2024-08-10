@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta data-name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Css/food.css" />
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <title>Boogle Food Services</title>
+    <style>
+        /* ===== Google Font Import - Poppins ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  
+}
+.button {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+  }
+  .button:active {
+    transform: scale(0.96);
+  }
+  .button:before,
+  .button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+  }
+  .button.animate::before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+      10% 10%, 18% 18%;
+    animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+  }
+  @keyframes greentopBubbles {
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  .button.animate::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+  }
+  @keyframes greenbottomBubbles {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+        70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+        105% 0%;
+    }
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+        110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+/* Dropdown button */
+/* Dropdown button */
+/* Dropdown button */
+ 
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Dropdown button icon */
+.dropbtn i {
+  color: #3498db;
+  font-size: 20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: relative;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: inline;
+}
+.rating {
+  display: flex;
+  justify-content: right;
+  margin-right: 0px;
+  /* margin-top: 20px; */
+  font-size: 30px;
+ 
+  /* background-color: #323334; */
+}
+
+.star {
+  cursor: pointer;
+  /* margin-right: 5px; */
+  color: rgb(5, 5, 5); /* Change color as needed */
+  font-size: 30px;
+}
+.star.rated {
+  color: orange; /* Change color as needed */
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.container .search-box {
+  position: relative;
+  height: 50px;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.search-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #323334;
+  padding: 0 15px 0 45px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 6px;
+}
+.search-box i {
+  position: absolute;
+  z-index: 2;
+  color: #999;
+  top: 50%;
+  left: 15px;
+  font-size: 22px;
+  transform: translateY(-50%);
+}
+.container .images .image-box {
+  position: relative;
+  height: 350px;
+  width: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.images .image-box {
+  margin: 12px;
+}
+.images .image-box img {
+  height: 75%;
+  width: 100%;
+  border-radius: 6px;
+  transition: transform 0.2s linear;
+}
+.image-box:hover img {
+  transform: scale(1.05);
+}
+.image-box h6 {
+  position: absolute;
+  bottom: 10px;
+  /* margin-top: 5px; */
+  left: 10px;
+  color: #181616;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.image-box span {
+  display: inline-block;
+  background: #844c4c;
+  margin-top: 40px;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  font-weight: 600;
+  z-index: 9999;
+}
+
+.image-box .developer {
+  background-color: #F7DFF5; 
+  color: #B22485;
+  z-index: 9999;
+}   
+
+
+.image-box .editor {
+  background-color: #c8e0c9; 
+  color: #32b224;
+  z-index: 9999;
+}  
+
+
+    </style>
+  </head>
+  <body>
+ 
+    <div class="container">
+
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search a food" list="l1"/>
+          <datalist id="l1">
+            <option value="Burger">Burger</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Samosa">Samosa</option>
+            <option value="Fries">Fries</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Momos">Momos</option>
+            <option value="Golgappe">Golgappe</option>
+            <option value="Noodle">Noodle</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Dosa">Dosa</option>
+            <option value="RajmaChawal">RajmaChawal</option>
+
+          </datalist>
+          </div>
+          <button class="button">Click Me</button>
+    
+        
+      <div class="images">
+       <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger1.jpg" alt="Card Image">
+              <h6>
+                <!-- <span class="developer"></span><br> -->
+                Burger by New Market
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>  
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza1.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Pocket-Friendly</span><br>
+                Momos by New Market
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+          
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee" >
+              <img src="./images/coffee1.jpg" alt="Card Image" > 
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Coffee by New Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger2.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Burger by Shanu's
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza2.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Bestsellar</span><br>
+                Momos by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa2.jpg" alt="Card Image">
+              <h6>
+                
+                Samosa by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries2.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Pocket-Friendly</span><br>
+                Fries by Shanu's
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee2.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Shanu's
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos2.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pizza by Shanu's
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="golgappe">
+              <img src="./images/golgappe6.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Golgappe by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="noodle">
+              <img src="./images/noodles2.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Noodles by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta2.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pasta by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="dosa">
+              <img src="./images/dosa2.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Dosa by Shanu's
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger3.jpg" alt="Card Image">
+              <h6>
+                <span class="developer"></span><br>
+                Burger by Fun and Frolic
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza3.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Momos by Fun and Frolic
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa3.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Samosa by Fun and Frolic
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries3.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Fries by Fun and Frolic
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Fun and Frolic
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pizza by Fun and Frolic
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="golgappe">
+              <img src="./images/golgappe7.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Golgappe by Fun and Frolic
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="noodle">
+              <img src="./images/noodles3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Noodles by Fun and Frolic
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Pasta by Fun and Frolic
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="dosa">
+              <img src="./images/dosa3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Dosa by Fun and Frolic
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+
+
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger4.jpg" alt="Card Image">
+              <h6>
+                <span class="developer"></span><br>
+                Burger by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza4.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Momos by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa4.jpg" alt="Card Image">
+              <h6>
+                <span class="developer"></span><br>
+                Samosa by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries4.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Fries by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee4.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Coffee by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos4.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Pizza by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="golgappe">
+              <img src="./images/golgappe8.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly</span><br>
+                Golgappe by Annapurna
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="noodle">
+              <img src="./images/noodles4.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Noodles by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta6.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pasta by Annapurna
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="dosa">
+              <img src="./images/dosa4.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Dosa by Annapurna
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+
+
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger5.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Pocket-Friendly</span><br>
+                Burger by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza5.webp" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Momos by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa5.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Pocket-Friendly</span><br>
+                Samosa by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries5.jpg" alt="Card Image">
+              <h6>
+                <span class="editor">Bestsellar</span><br>
+               Fries by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee5.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos5.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pizza by Desi Zayka
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="noodle">
+              <img src="./images/noodles1.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Noodles by Desi Zayka  
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta7.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pasta by Desi Zayka
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="rajmachawal">
+              <img src="./images/rajma-chawal-1.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="developer">Bestseller </span><br>
+                Rajma Chawal by Desi Zayka
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+       
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger6.jpg" alt="Card Image">
+              <h6>
+                
+                Burger by Mukteshwari
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza6.webp" alt="Card Image">
+              <h6>
+                
+                Momos by Mukteshwari
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa6.jpg" alt="Card Image">
+              <h6>
+                
+                Samosa by Mukteshwari
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries6.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Fries by Mukteshwari
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee6.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Mukteshwari
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos6.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Pizza by Mukteshwari
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta6.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pasta by Mukteshwari
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="dosa">
+              <img src="./images/dosa6.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Dosa by Mukteshwari
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="rajmachawal">
+              <img src="./images/rajma-chawal-2-1024x1536.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Rajma Chawal by Mukteshwari
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+
+
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger7.jpg" alt="Card Image">
+              <h6>
+                <span class="developer"></span><br>
+                Burger by Spicy Bites
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza7.jpg" alt="Card Image">
+              <h6>
+                <span class="editor"></span><br>
+                Momos by Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa7.jpg" alt="Card Image">
+              <h6>
+                <span class="developer"></span><br>
+                Samosa by Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries7.jpg" alt="Card Image">
+              <h6>
+                
+                Fries by Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee7.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Spicy Bites
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos7.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pizza Spicy Bites 
+              </h6>  
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta7.jpg" alt="Card Image">
+              <h6>
+                <span class="developer">Bestseller </span><br>
+                Pasta Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="dosa">
+              <img src="./images/dosa7.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Dosa Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="rajmachawal">
+              <img src="./images/rajma-chawal-3.jpg" alt="Card Image">
+              <h6>
+                <br>
+                <span class="editor">Pocket-Friendly </span><br>
+                Rajma Chawal by Spicy Bites
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+
+
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="burger">
+              <img src="./images/burger8.jpg" alt="Card Image">
+              <h6>
+                
+                Burger by Old Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="momos">
+              <img src="./images/pizza8.jpg" alt="Card Image">
+              <h6>
+                
+                Momos by Old Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="samosa">
+              <img src="./images/samosa8.jpg" alt="Card Image">
+              <h6>
+                
+                Samosa by Old Market
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card-item image-box" data-name="fries">
+              <img src="./images/fries8.jpg" alt="Card Image">
+              <h6>
+                
+                Fries by Old Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="coffee">
+              <img src="./images/coffee8.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Coffee by Old Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pizza">
+              <img src="./images/momos8.jpg" alt="Card Image">
+              <h6>
+                <br>
+                Pizza by Old Market
+              </h6>
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div>  
+          </div>
+        </div>
+
+        <div class="card-list">
+          <div class="card-item image-box" data-name="pasta">
+              <img src="./images/pasta2.jpg" alt="Card Image">
+              <h6>
+                <br>
+               Pasta by Old Market
+              </h6> 
+              <div class="rating">
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+                <div class="star">★</div>
+              </div> 
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+const search = document.querySelector(".search-box input"),
+      images = document.querySelectorAll(".image-box");
+
+search.addEventListener("change", e =>{
+    // if(e.key == "Enter"){
+        let searchValue = search.value.toLowerCase();
+        images.forEach(image =>{
+            const imageName = image.dataset.name.toLowerCase();
+            if(searchValue === imageName){ 
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        });
+    
+});
+const button = document.querySelector(".button");
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  button.classList.add("animate");
+  setTimeout(() => {
+    button.classList.remove("animate");
+  }, 600);
+
+  // Navigate to the desired HTML page
+  window.location.href = "graphs.html";
+});
+
+search.addEventListener("keyup", () => {
+  if (search.value != "") return;
+
+  images.forEach((image) => {
+    image.style.display = "block";
+  });
+});
+
+
+// Add event listener to each star for rating
+images.forEach(image => {
+    const stars = image.querySelector(".rating").querySelectorAll(".star");
+    stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+            // Set the rating based on the index of the clicked star
+            const rating = index + 1;
+            // Highlight stars up to the clicked one
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.add("rated");
+            }
+            // Remove highlight from stars after the clicked one
+            for (let i = index + 1; i < stars.length; i++) {
+                stars[i].classList.remove("rated");
+            }
+            // You can perform further actions here, such as sending the rating to a server
+            // console.log(Rated ${rating} stars for ${image.dataset.name});
+        });
+    });
+});
+</script>
+  </body>
+</html>
